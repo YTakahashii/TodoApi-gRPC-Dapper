@@ -19,4 +19,7 @@
     <PackageReference Include="Grpc.Core.Testing" Version="1.18.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\TodoApi-gRPC-Dapper\TodoApi-gRPC-Dapper.csproj" />
+  </ItemGroup>
 </Project>

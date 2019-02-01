@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace TodoApi_gRPC_Dapper.Models.Repository
 {
-    public class BaseRepository
+    public class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity: IBaseEntity
     {
         public BaseRepository()
         {

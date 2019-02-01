@@ -3,7 +3,7 @@ using TodoApi_gRPC_Dapper.Models.Repository;
 
 namespace TodoApi_gRPC_Dapper.Models.Persistance
 {
-    public class UnitOfWork
+    public class UnitOfWork: IUnitOfWork
     {
         private ITodoItemRepository todoItems;
 

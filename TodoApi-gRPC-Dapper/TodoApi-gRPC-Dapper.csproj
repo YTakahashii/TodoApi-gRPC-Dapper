@@ -18,5 +18,8 @@
     <PackageReference Include="Google.Protobuf" Version="3.6.1" />
   </ItemGroup>
 
+  <ItemGroup>
     <Folder Include="Models\" />
+    <Folder Include="Implements\" />
+  </ItemGroup>
 </Project>

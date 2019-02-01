@@ -1,1 +1,1 @@
-CREATE DATABASE TodoApi_Dapper
+CREATE DATABASE todoapi_grpc_dapper;

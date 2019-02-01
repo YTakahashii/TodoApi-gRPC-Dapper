@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package Todo.Proto;
+
+service TodoService {
+    rpc GetTodoItems (Empty) returns (GetTodoItemsResponse) {}
+}
+
+message Empty {}
+
+message Todo {
+    string Id = 1;
+    string Name = 2;
+    bool IsComplete = 3;
+}
+
+message GetTodoItemsResponse {
+   repeated Todo todos = 1;
+}

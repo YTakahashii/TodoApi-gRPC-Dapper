@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package Todo.Proto;
+package Proto.Todo;
 
 service TodoService {
     rpc GetTodoItems (Empty) returns (GetTodoItemsResponse) {}

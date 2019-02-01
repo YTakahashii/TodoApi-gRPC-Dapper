@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace Todo.Proto {
+namespace Proto.Todo {
 
   /// <summary>Holder for reflection information generated from todo.proto</summary>
   public static partial class TodoReflection {
@@ -24,18 +24,18 @@ namespace Todo.Proto {
     static TodoReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Cgp0b2RvLnByb3RvEgpUb2RvLlByb3RvIgcKBUVtcHR5IjQKBFRvZG8SCgoC",
+            "Cgp0b2RvLnByb3RvEgpQcm90by5Ub2RvIgcKBUVtcHR5IjQKBFRvZG8SCgoC",
             "SWQYASABKAkSDAoETmFtZRgCIAEoCRISCgpJc0NvbXBsZXRlGAMgASgIIjcK",
-            "FEdldFRvZG9JdGVtc1Jlc3BvbnNlEh8KBXRvZG9zGAEgAygLMhAuVG9kby5Q",
-            "cm90by5Ub2RvMlQKC1RvZG9TZXJ2aWNlEkUKDEdldFRvZG9JdGVtcxIRLlRv",
-            "ZG8uUHJvdG8uRW1wdHkaIC5Ub2RvLlByb3RvLkdldFRvZG9JdGVtc1Jlc3Bv",
+            "FEdldFRvZG9JdGVtc1Jlc3BvbnNlEh8KBXRvZG9zGAEgAygLMhAuUHJvdG8u",
+            "VG9kby5Ub2RvMlQKC1RvZG9TZXJ2aWNlEkUKDEdldFRvZG9JdGVtcxIRLlBy",
+            "b3RvLlRvZG8uRW1wdHkaIC5Qcm90by5Ub2RvLkdldFRvZG9JdGVtc1Jlc3Bv",
             "bnNlIgBiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Todo.Proto.Empty), global::Todo.Proto.Empty.Parser, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Todo.Proto.Todo), global::Todo.Proto.Todo.Parser, new[]{ "Id", "Name", "IsComplete" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Todo.Proto.GetTodoItemsResponse), global::Todo.Proto.GetTodoItemsResponse.Parser, new[]{ "Todos" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Proto.Todo.Empty), global::Proto.Todo.Empty.Parser, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Proto.Todo.Todo), global::Proto.Todo.Todo.Parser, new[]{ "Id", "Name", "IsComplete" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Proto.Todo.GetTodoItemsResponse), global::Proto.Todo.GetTodoItemsResponse.Parser, new[]{ "Todos" }, null, null, null)
           }));
     }
     #endregion
@@ -50,7 +50,7 @@ namespace Todo.Proto {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Todo.Proto.TodoReflection.Descriptor.MessageTypes[0]; }
+      get { return global::Proto.Todo.TodoReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -151,7 +151,7 @@ namespace Todo.Proto {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Todo.Proto.TodoReflection.Descriptor.MessageTypes[1]; }
+      get { return global::Proto.Todo.TodoReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -336,7 +336,7 @@ namespace Todo.Proto {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Todo.Proto.TodoReflection.Descriptor.MessageTypes[2]; }
+      get { return global::Proto.Todo.TodoReflection.Descriptor.MessageTypes[2]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -364,11 +364,11 @@ namespace Todo.Proto {
 
     /// <summary>Field number for the "todos" field.</summary>
     public const int TodosFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::Todo.Proto.Todo> _repeated_todos_codec
-        = pb::FieldCodec.ForMessage(10, global::Todo.Proto.Todo.Parser);
-    private readonly pbc::RepeatedField<global::Todo.Proto.Todo> todos_ = new pbc::RepeatedField<global::Todo.Proto.Todo>();
+    private static readonly pb::FieldCodec<global::Proto.Todo.Todo> _repeated_todos_codec
+        = pb::FieldCodec.ForMessage(10, global::Proto.Todo.Todo.Parser);
+    private readonly pbc::RepeatedField<global::Proto.Todo.Todo> todos_ = new pbc::RepeatedField<global::Proto.Todo.Todo>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Todo.Proto.Todo> Todos {
+    public pbc::RepeatedField<global::Proto.Todo.Todo> Todos {
       get { return todos_; }
     }
 

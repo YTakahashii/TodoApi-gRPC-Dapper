@@ -7,31 +7,31 @@
 
 using grpc = global::Grpc.Core;
 
-namespace Todo.Proto {
+namespace Proto.Todo {
   public static partial class TodoService
   {
-    static readonly string __ServiceName = "Todo.Proto.TodoService";
+    static readonly string __ServiceName = "Proto.Todo.TodoService";
 
-    static readonly grpc::Marshaller<global::Todo.Proto.Empty> __Marshaller_Todo_Proto_Empty = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Todo.Proto.Empty.Parser.ParseFrom);
-    static readonly grpc::Marshaller<global::Todo.Proto.GetTodoItemsResponse> __Marshaller_Todo_Proto_GetTodoItemsResponse = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Todo.Proto.GetTodoItemsResponse.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::Proto.Todo.Empty> __Marshaller_Proto_Todo_Empty = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Proto.Todo.Empty.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::Proto.Todo.GetTodoItemsResponse> __Marshaller_Proto_Todo_GetTodoItemsResponse = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Proto.Todo.GetTodoItemsResponse.Parser.ParseFrom);
 
-    static readonly grpc::Method<global::Todo.Proto.Empty, global::Todo.Proto.GetTodoItemsResponse> __Method_GetTodoItems = new grpc::Method<global::Todo.Proto.Empty, global::Todo.Proto.GetTodoItemsResponse>(
+    static readonly grpc::Method<global::Proto.Todo.Empty, global::Proto.Todo.GetTodoItemsResponse> __Method_GetTodoItems = new grpc::Method<global::Proto.Todo.Empty, global::Proto.Todo.GetTodoItemsResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
         "GetTodoItems",
-        __Marshaller_Todo_Proto_Empty,
-        __Marshaller_Todo_Proto_GetTodoItemsResponse);
+        __Marshaller_Proto_Todo_Empty,
+        __Marshaller_Proto_Todo_GetTodoItemsResponse);
 
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
     {
-      get { return global::Todo.Proto.TodoReflection.Descriptor.Services[0]; }
+      get { return global::Proto.Todo.TodoReflection.Descriptor.Services[0]; }
     }
 
     /// <summary>Base class for server-side implementations of TodoService</summary>
     public abstract partial class TodoServiceBase
     {
-      public virtual global::System.Threading.Tasks.Task<global::Todo.Proto.GetTodoItemsResponse> GetTodoItems(global::Todo.Proto.Empty request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::Proto.Todo.GetTodoItemsResponse> GetTodoItems(global::Proto.Todo.Empty request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -61,19 +61,19 @@ namespace Todo.Proto {
       {
       }
 
-      public virtual global::Todo.Proto.GetTodoItemsResponse GetTodoItems(global::Todo.Proto.Empty request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::Proto.Todo.GetTodoItemsResponse GetTodoItems(global::Proto.Todo.Empty request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return GetTodoItems(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
-      public virtual global::Todo.Proto.GetTodoItemsResponse GetTodoItems(global::Todo.Proto.Empty request, grpc::CallOptions options)
+      public virtual global::Proto.Todo.GetTodoItemsResponse GetTodoItems(global::Proto.Todo.Empty request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_GetTodoItems, null, options, request);
       }
-      public virtual grpc::AsyncUnaryCall<global::Todo.Proto.GetTodoItemsResponse> GetTodoItemsAsync(global::Todo.Proto.Empty request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::Proto.Todo.GetTodoItemsResponse> GetTodoItemsAsync(global::Proto.Todo.Empty request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return GetTodoItemsAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
-      public virtual grpc::AsyncUnaryCall<global::Todo.Proto.GetTodoItemsResponse> GetTodoItemsAsync(global::Todo.Proto.Empty request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::Proto.Todo.GetTodoItemsResponse> GetTodoItemsAsync(global::Proto.Todo.Empty request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_GetTodoItems, null, options, request);
       }

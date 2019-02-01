@@ -22,4 +22,7 @@
   <ItemGroup>
     <ProjectReference Include="..\TodoApi-gRPC-Dapper\TodoApi-gRPC-Dapper.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Implements\" />
+  </ItemGroup>
 </Project>

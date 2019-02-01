@@ -56,5 +56,14 @@ namespace TodoApi_gRPC_Dapper.Tests.Implements
             // controller = new TodoController(uowMoq.Object);
             implement = new TodoImplement(uowMoq.Object);
         }
+
+        [Fact(DisplayName = "GetTodoItems({})が正しく動作する")]
+        public async Task OkGetTodoItemsTest()
+        {
+            var fakeServerCallContext = TestServerCallContext.Create("fooMethod", null, DateTime.UtcNow.AddHours(1), new Metadata(), CancellationToken.None, "127.0.0.1", null, null, (metadata) => TaskUtils.CompletedTask, () => new WriteOptions(), (writeOptions) => { });
+            var response = await implement.GetTodoItems(new Empty(), fakeServerCallContext);
+
+            Assert.Equal(todoItems, response.Todos);
+        }
     }
 }

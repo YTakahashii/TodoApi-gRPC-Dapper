@@ -41,5 +41,22 @@ namespace TodoApi_gRPC_Dapper.Implements {
 
             return response;
         }
+
+        public override async Task<PutTodoItemResponse> PutTodoItem (PutTodoItemRequest request, ServerCallContext context) {
+            await _unitOfWork.TodoItems.Update (request.Todo);
+            var updatedTodoItem = await _unitOfWork.TodoItems.FindAsync (request.Todo.Id);
+            var response = new PutTodoItemResponse { Todo = updatedTodoItem };
+
+            return response;
+        }
+
+        public override async Task<DeleteTodoItemResponse> DeleteTodoItem (DeleteTodoItemRequest request, ServerCallContext context) {
+            var deleteTodoItem = await _unitOfWork.TodoItems.FindAsync (request.Id);
+            // deleteTodoItemがなかったときの例外処理必要
+            await _unitOfWork.TodoItems.Remove (deleteTodoItem);
+            var response = new DeleteTodoItemResponse { Todo = deleteTodoItem };
+
+            return response;
+        }
     }
 }

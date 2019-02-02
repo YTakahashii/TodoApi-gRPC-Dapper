@@ -64,9 +64,9 @@ namespace TodoApi_gRPC_Dapper.Tests.Implements
         public async Task OkGetTodoItemsTest()
         {
             var fakeServerCallContext = TestServerCallContext.Create("fooMethod", null, DateTime.UtcNow.AddHours(1), new Metadata(), CancellationToken.None, "127.0.0.1", null, null, (metadata) => TaskUtils.CompletedTask, () => new WriteOptions(), (writeOptions) => { });
-            var response = await implement.GetTodoItems(new Empty(), fakeServerCallContext);
+            var actual = await implement.GetTodoItems(new Empty(), fakeServerCallContext);
 
-            Assert.Equal(expectedTodoItems, response.Todos);
+            Assert.Equal(expectedTodoItems, actual.Todos);
         }
 
         [Fact(DisplayName = "GetTodoItem({Id:'Id'})が正しく動作する")]

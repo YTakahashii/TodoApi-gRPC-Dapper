@@ -36,10 +36,14 @@ namespace TodoApi_gRPC_Dapper.Tests.Implements
                 new Todo{ Id = Guid.NewGuid().ToString("N"), Name = "Test3", IsComplete = false}
             };
             uowMoq = new Mock<IUnitOfWork>();
+            // ITodoItemRepositoryのメソッドのダミーメソッドを設定する
             todoItemRepoMoq = new Mock<ITodoItemRepository>();
+            // FindAllAsyncのダミーのReturnをReturnsAsyncで設定
             todoItemRepoMoq.Setup(x => x.FindAllAsync()).ReturnsAsync(todoItems);
+            // ダミーメソッドに引数がある場合はIt.IsAny<引数の型>()で指定する
             todoItemRepoMoq.Setup(x => x.FindAsync(It.IsAny<String>()))
                 .ReturnsAsync((String id) => todoItems.Find(x => x.Id == id));
+            // ダミーメソッドの中身を書き換える場合はCallbackでoverrideする
             todoItemRepoMoq.SetupAsync(x => x.Add(It.IsAny<Todo>()))
                 .Callback<Todo>(item => todoItems.Add(item));
             todoItemRepoMoq.SetupAsync(x => x.Update(It.IsAny<Todo>()))
@@ -53,7 +57,6 @@ namespace TodoApi_gRPC_Dapper.Tests.Implements
             todoItemRepoMoq.Setup(x => x.Count()).Returns(todoItems.Count);
             uowMoq.Setup(x => x.TodoItems).Returns(todoItemRepoMoq.Object);
 
-            // controller = new TodoController(uowMoq.Object);
             implement = new TodoImplement(uowMoq.Object);
         }
 

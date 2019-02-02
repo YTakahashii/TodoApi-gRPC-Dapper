@@ -35,7 +35,7 @@ namespace Proto.Todo {
             "KAsyEC5Qcm90by5Ub2RvLlRvZG8iNQoTUHV0VG9kb0l0ZW1SZXNwb25zZRIe",
             "CgR0b2RvGAEgASgLMhAuUHJvdG8uVG9kby5Ub2RvIiMKFURlbGV0ZVRvZG9J",
             "dGVtUmVxdWVzdBIKCgJJZBgBIAEoCSI4ChZEZWxldGVUb2RvSXRlbVJlc3Bv",
-            "bnNlEh4KBHRvZG8YASADKAsyEC5Qcm90by5Ub2RvLlRvZG8yqAMKC1RvZG9T",
+            "bnNlEh4KBHRvZG8YASABKAsyEC5Qcm90by5Ub2RvLlRvZG8yqAMKC1RvZG9T",
             "ZXJ2aWNlEkUKDEdldFRvZG9JdGVtcxIRLlByb3RvLlRvZG8uRW1wdHkaIC5Q",
             "cm90by5Ub2RvLkdldFRvZG9JdGVtc1Jlc3BvbnNlIgASUAoLR2V0VG9kb0l0",
             "ZW0SHi5Qcm90by5Ub2RvLkdldFRvZG9JdGVtUmVxdWVzdBofLlByb3RvLlRv",
@@ -1425,7 +1425,7 @@ namespace Proto.Todo {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public DeleteTodoItemResponse(DeleteTodoItemResponse other) : this() {
-      todo_ = other.todo_.Clone();
+      todo_ = other.todo_ != null ? other.todo_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -1436,12 +1436,13 @@ namespace Proto.Todo {
 
     /// <summary>Field number for the "todo" field.</summary>
     public const int TodoFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::Proto.Todo.Todo> _repeated_todo_codec
-        = pb::FieldCodec.ForMessage(10, global::Proto.Todo.Todo.Parser);
-    private readonly pbc::RepeatedField<global::Proto.Todo.Todo> todo_ = new pbc::RepeatedField<global::Proto.Todo.Todo>();
+    private global::Proto.Todo.Todo todo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::Proto.Todo.Todo> Todo {
+    public global::Proto.Todo.Todo Todo {
       get { return todo_; }
+      set {
+        todo_ = value;
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1457,14 +1458,14 @@ namespace Proto.Todo {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if(!todo_.Equals(other.todo_)) return false;
+      if (!object.Equals(Todo, other.Todo)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      hash ^= todo_.GetHashCode();
+      if (todo_ != null) hash ^= Todo.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -1478,7 +1479,10 @@ namespace Proto.Todo {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      todo_.WriteTo(output, _repeated_todo_codec);
+      if (todo_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Todo);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -1487,7 +1491,9 @@ namespace Proto.Todo {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      size += todo_.CalculateSize(_repeated_todo_codec);
+      if (todo_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Todo);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -1499,7 +1505,12 @@ namespace Proto.Todo {
       if (other == null) {
         return;
       }
-      todo_.Add(other.todo_);
+      if (other.todo_ != null) {
+        if (todo_ == null) {
+          todo_ = new global::Proto.Todo.Todo();
+        }
+        Todo.MergeFrom(other.Todo);
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -1512,7 +1523,10 @@ namespace Proto.Todo {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            todo_.AddEntriesFrom(input, _repeated_todo_codec);
+            if (todo_ == null) {
+              todo_ = new global::Proto.Todo.Todo();
+            }
+            input.ReadMessage(todo_);
             break;
           }
         }

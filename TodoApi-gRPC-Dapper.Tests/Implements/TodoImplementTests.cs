@@ -21,7 +21,7 @@ namespace TodoApi_gRPC_Dapper.Tests.Implements
     public class TodoImplementTests
     {
         private readonly ITestOutputHelper outputHelper;
-        private List<Todo> todoItems;
+        private List<Todo> expectedTodoItems;
         private Mock<IUnitOfWork> uowMoq;
         private Mock<ITodoItemRepository> todoItemRepoMoq;
         private TodoImplement implement;
@@ -29,7 +29,7 @@ namespace TodoApi_gRPC_Dapper.Tests.Implements
         public TodoImplementTests(ITestOutputHelper outputHelper)
         {
             this.outputHelper = outputHelper;
-            todoItems = new List<Todo>()
+            expectedTodoItems = new List<Todo>()
             {
                 new Todo{ Id = Guid.NewGuid().ToString("N"), Name = "Test1", IsComplete = false},
                 new Todo{ Id = Guid.NewGuid().ToString("N"), Name = "Test2", IsComplete = false},
@@ -39,22 +39,22 @@ namespace TodoApi_gRPC_Dapper.Tests.Implements
             // ITodoItemRepositoryのメソッドのダミーメソッドを設定する
             todoItemRepoMoq = new Mock<ITodoItemRepository>();
             // FindAllAsyncのダミーのReturnをReturnsAsyncで設定
-            todoItemRepoMoq.Setup(x => x.FindAllAsync()).ReturnsAsync(todoItems);
+            todoItemRepoMoq.Setup(x => x.FindAllAsync()).ReturnsAsync(expectedTodoItems);
             // ダミーメソッドに引数がある場合はIt.IsAny<引数の型>()で指定する
             todoItemRepoMoq.Setup(x => x.FindAsync(It.IsAny<String>()))
-                .ReturnsAsync((String id) => todoItems.Find(x => x.Id == id));
+                .ReturnsAsync((String id) => expectedTodoItems.Find(x => x.Id == id));
             // ダミーメソッドの中身を書き換える場合はCallbackでoverrideする
             todoItemRepoMoq.SetupAsync(x => x.Add(It.IsAny<Todo>()))
-                .Callback<Todo>(item => todoItems.Add(item));
+                .Callback<Todo>(item => expectedTodoItems.Add(item));
             todoItemRepoMoq.SetupAsync(x => x.Update(It.IsAny<Todo>()))
                 .Callback<Todo>(item =>
                 {
-                    var index = todoItems.FindIndex(x => x.Id == item.Id);
-                    todoItems[index] = item;
+                    var index = expectedTodoItems.FindIndex(x => x.Id == item.Id);
+                    expectedTodoItems[index] = item;
                 });
             todoItemRepoMoq.SetupAsync(x => x.Remove(It.IsAny<Todo>()))
-                .Callback<Todo>(item => todoItems.Remove(item));
-            todoItemRepoMoq.Setup(x => x.Count()).Returns(todoItems.Count);
+                .Callback<Todo>(item => expectedTodoItems.Remove(item));
+            todoItemRepoMoq.Setup(x => x.Count()).Returns(expectedTodoItems.Count);
             uowMoq.Setup(x => x.TodoItems).Returns(todoItemRepoMoq.Object);
 
             implement = new TodoImplement(uowMoq.Object);
@@ -66,13 +66,13 @@ namespace TodoApi_gRPC_Dapper.Tests.Implements
             var fakeServerCallContext = TestServerCallContext.Create("fooMethod", null, DateTime.UtcNow.AddHours(1), new Metadata(), CancellationToken.None, "127.0.0.1", null, null, (metadata) => TaskUtils.CompletedTask, () => new WriteOptions(), (writeOptions) => { });
             var response = await implement.GetTodoItems(new Empty(), fakeServerCallContext);
 
-            Assert.Equal(todoItems, response.Todos);
+            Assert.Equal(expectedTodoItems, response.Todos);
         }
 
         [Fact(DisplayName = "GetTodoItem({Id:'Id'})が正しく動作する")]
         public async Task OkGetTodoItemTest()
         {
-            var targetTodoItem = todoItems[0];
+            var targetTodoItem = expectedTodoItems[0];
             var request = new GetTodoItemRequest { Id = targetTodoItem.Id };
             var fakeServerCallContext = TestServerCallContext.Create("fooMethod", null, DateTime.UtcNow.AddHours(1), new Metadata(), CancellationToken.None, "127.0.0.1", null, null, (metadata) => TaskUtils.CompletedTask, () => new WriteOptions(), (writeOptions) => { });
             var actual = await implement.GetTodoItem(request, fakeServerCallContext);

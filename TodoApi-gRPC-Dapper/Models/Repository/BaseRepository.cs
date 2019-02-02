@@ -20,7 +20,7 @@ namespace TodoApi_gRPC_Dapper.Models.Repository
             throw new NotImplementedException();
         }
 
-        public Task Add(TEntity entity)
+        public Task<TEntity> Add(TEntity entity)
         {
             throw new NotImplementedException();
         }

@@ -8,7 +8,7 @@ namespace TodoApi_gRPC_Dapper.Models.Repository
     {
         Task<TEntity> FindAsync(string id);
         Task<IEnumerable<TEntity>> FindAllAsync();
-        Task Add(TEntity entity);
+        Task<TEntity> Add(TEntity entity);
         Task Remove(TEntity entity);
         Task Update(TEntity entity);
         int Count();

@@ -44,8 +44,11 @@ namespace TodoApi_gRPC_Dapper.Tests.Implements
             todoItemRepoMoq.Setup(x => x.FindAsync(It.IsAny<String>()))
                 .ReturnsAsync((String id) => expectedTodoItems.Find(x => x.Id == id));
             // ダミーメソッドの中身を書き換える場合はCallbackでoverrideする
-            todoItemRepoMoq.SetupAsync(x => x.Add(It.IsAny<Todo>()))
-                .Callback<Todo>(item => expectedTodoItems.Add(item));
+            todoItemRepoMoq.SetupAsync(x => x.Add(It.IsAny<Todo>())).Returns((Todo todo) =>
+            {
+                expectedTodoItems.Add(todo);
+                return todo;
+            });
             todoItemRepoMoq.SetupAsync(x => x.Update(It.IsAny<Todo>()))
                 .Callback<Todo>(item =>
                 {

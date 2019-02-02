@@ -14,6 +14,8 @@ namespace Proto.Todo {
 
     static readonly grpc::Marshaller<global::Proto.Todo.Empty> __Marshaller_Proto_Todo_Empty = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Proto.Todo.Empty.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::Proto.Todo.GetTodoItemsResponse> __Marshaller_Proto_Todo_GetTodoItemsResponse = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Proto.Todo.GetTodoItemsResponse.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::Proto.Todo.GetTodoItemRequest> __Marshaller_Proto_Todo_GetTodoItemRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Proto.Todo.GetTodoItemRequest.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::Proto.Todo.GetTodoItemResponse> __Marshaller_Proto_Todo_GetTodoItemResponse = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Proto.Todo.GetTodoItemResponse.Parser.ParseFrom);
 
     static readonly grpc::Method<global::Proto.Todo.Empty, global::Proto.Todo.GetTodoItemsResponse> __Method_GetTodoItems = new grpc::Method<global::Proto.Todo.Empty, global::Proto.Todo.GetTodoItemsResponse>(
         grpc::MethodType.Unary,
@@ -21,6 +23,13 @@ namespace Proto.Todo {
         "GetTodoItems",
         __Marshaller_Proto_Todo_Empty,
         __Marshaller_Proto_Todo_GetTodoItemsResponse);
+
+    static readonly grpc::Method<global::Proto.Todo.GetTodoItemRequest, global::Proto.Todo.GetTodoItemResponse> __Method_GetTodoItem = new grpc::Method<global::Proto.Todo.GetTodoItemRequest, global::Proto.Todo.GetTodoItemResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "GetTodoItem",
+        __Marshaller_Proto_Todo_GetTodoItemRequest,
+        __Marshaller_Proto_Todo_GetTodoItemResponse);
 
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
@@ -32,6 +41,11 @@ namespace Proto.Todo {
     public abstract partial class TodoServiceBase
     {
       public virtual global::System.Threading.Tasks.Task<global::Proto.Todo.GetTodoItemsResponse> GetTodoItems(global::Proto.Todo.Empty request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      public virtual global::System.Threading.Tasks.Task<global::Proto.Todo.GetTodoItemResponse> GetTodoItem(global::Proto.Todo.GetTodoItemRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -77,6 +91,22 @@ namespace Proto.Todo {
       {
         return CallInvoker.AsyncUnaryCall(__Method_GetTodoItems, null, options, request);
       }
+      public virtual global::Proto.Todo.GetTodoItemResponse GetTodoItem(global::Proto.Todo.GetTodoItemRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetTodoItem(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      public virtual global::Proto.Todo.GetTodoItemResponse GetTodoItem(global::Proto.Todo.GetTodoItemRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_GetTodoItem, null, options, request);
+      }
+      public virtual grpc::AsyncUnaryCall<global::Proto.Todo.GetTodoItemResponse> GetTodoItemAsync(global::Proto.Todo.GetTodoItemRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetTodoItemAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      public virtual grpc::AsyncUnaryCall<global::Proto.Todo.GetTodoItemResponse> GetTodoItemAsync(global::Proto.Todo.GetTodoItemRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_GetTodoItem, null, options, request);
+      }
       /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
       protected override TodoServiceClient NewInstance(ClientBaseConfiguration configuration)
       {
@@ -89,7 +119,8 @@ namespace Proto.Todo {
     public static grpc::ServerServiceDefinition BindService(TodoServiceBase serviceImpl)
     {
       return grpc::ServerServiceDefinition.CreateBuilder()
-          .AddMethod(__Method_GetTodoItems, serviceImpl.GetTodoItems).Build();
+          .AddMethod(__Method_GetTodoItems, serviceImpl.GetTodoItems)
+          .AddMethod(__Method_GetTodoItem, serviceImpl.GetTodoItem).Build();
     }
 
     /// <summary>Register service method implementations with a service binder. Useful when customizing the service binding logic.
@@ -99,6 +130,7 @@ namespace Proto.Todo {
     public static void BindService(grpc::ServiceBinderBase serviceBinder, TodoServiceBase serviceImpl)
     {
       serviceBinder.AddMethod(__Method_GetTodoItems, serviceImpl.GetTodoItems);
+      serviceBinder.AddMethod(__Method_GetTodoItem, serviceImpl.GetTodoItem);
     }
 
   }

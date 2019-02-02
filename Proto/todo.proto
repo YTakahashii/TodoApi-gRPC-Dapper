@@ -4,6 +4,7 @@ package Proto.Todo;
 
 service TodoService {
     rpc GetTodoItems (Empty) returns (GetTodoItemsResponse) {}
+    rpc GetTodoItem (GetTodoItemRequest) returns (GetTodoItemResponse) {}
 }
 
 message Empty {}
@@ -16,4 +17,12 @@ message Todo {
 
 message GetTodoItemsResponse {
    repeated Todo todos = 1;
+}
+
+message GetTodoItemRequest {
+    string Id = 1;
+}
+
+message GetTodoItemResponse {
+    Todo todo = 1;
 }

@@ -33,5 +33,13 @@ namespace TodoApi_gRPC_Dapper.Implements
 
             return response;
         }
+
+        public override async Task<GetTodoItemResponse> GetTodoItem(GetTodoItemRequest request, ServerCallContext context)
+        {
+            var todo = await _unitOfWork.TodoItems.FindAsync(request.Id);
+            var response = new GetTodoItemResponse { Todo = todo };
+
+            return response;
+        }
     }
 }

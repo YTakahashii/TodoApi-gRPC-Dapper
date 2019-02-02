@@ -29,11 +29,23 @@ namespace Proto.Todo {
             "FEdldFRvZG9JdGVtc1Jlc3BvbnNlEh8KBXRvZG9zGAEgAygLMhAuUHJvdG8u",
             "VG9kby5Ub2RvIiAKEkdldFRvZG9JdGVtUmVxdWVzdBIKCgJJZBgBIAEoCSI1",
             "ChNHZXRUb2RvSXRlbVJlc3BvbnNlEh4KBHRvZG8YASABKAsyEC5Qcm90by5U",
-            "b2RvLlRvZG8ypgEKC1RvZG9TZXJ2aWNlEkUKDEdldFRvZG9JdGVtcxIRLlBy",
-            "b3RvLlRvZG8uRW1wdHkaIC5Qcm90by5Ub2RvLkdldFRvZG9JdGVtc1Jlc3Bv",
-            "bnNlIgASUAoLR2V0VG9kb0l0ZW0SHi5Qcm90by5Ub2RvLkdldFRvZG9JdGVt",
-            "UmVxdWVzdBofLlByb3RvLlRvZG8uR2V0VG9kb0l0ZW1SZXNwb25zZSIAYgZw",
-            "cm90bzM="));
+            "b2RvLlRvZG8iIwoTUG9zdFRvZG9JdGVtUmVxdWVzdBIMCgROYW1lGAIgASgJ",
+            "IjYKFFBvc3RUb2RvSXRlbVJlc3BvbnNlEh4KBHRvZG8YASABKAsyEC5Qcm90",
+            "by5Ub2RvLlRvZG8iNAoSUHV0VG9kb0l0ZW1SZXF1ZXN0Eh4KBHRvZG8YASAB",
+            "KAsyEC5Qcm90by5Ub2RvLlRvZG8iNQoTUHV0VG9kb0l0ZW1SZXNwb25zZRIe",
+            "CgR0b2RvGAEgASgLMhAuUHJvdG8uVG9kby5Ub2RvIiMKFURlbGV0ZVRvZG9J",
+            "dGVtUmVxdWVzdBIKCgJJZBgBIAEoCSI4ChZEZWxldGVUb2RvSXRlbVJlc3Bv",
+            "bnNlEh4KBHRvZG8YASADKAsyEC5Qcm90by5Ub2RvLlRvZG8yqAMKC1RvZG9T",
+            "ZXJ2aWNlEkUKDEdldFRvZG9JdGVtcxIRLlByb3RvLlRvZG8uRW1wdHkaIC5Q",
+            "cm90by5Ub2RvLkdldFRvZG9JdGVtc1Jlc3BvbnNlIgASUAoLR2V0VG9kb0l0",
+            "ZW0SHi5Qcm90by5Ub2RvLkdldFRvZG9JdGVtUmVxdWVzdBofLlByb3RvLlRv",
+            "ZG8uR2V0VG9kb0l0ZW1SZXNwb25zZSIAElMKDFBvc3RUb2RvSXRlbRIfLlBy",
+            "b3RvLlRvZG8uUG9zdFRvZG9JdGVtUmVxdWVzdBogLlByb3RvLlRvZG8uUG9z",
+            "dFRvZG9JdGVtUmVzcG9uc2UiABJQCgtQdXRUb2RvSXRlbRIeLlByb3RvLlRv",
+            "ZG8uUHV0VG9kb0l0ZW1SZXF1ZXN0Gh8uUHJvdG8uVG9kby5QdXRUb2RvSXRl",
+            "bVJlc3BvbnNlIgASWQoORGVsZXRlVG9kb0l0ZW0SIS5Qcm90by5Ub2RvLkRl",
+            "bGV0ZVRvZG9JdGVtUmVxdWVzdBoiLlByb3RvLlRvZG8uRGVsZXRlVG9kb0l0",
+            "ZW1SZXNwb25zZSIAYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
@@ -41,7 +53,13 @@ namespace Proto.Todo {
             new pbr::GeneratedClrTypeInfo(typeof(global::Proto.Todo.Todo), global::Proto.Todo.Todo.Parser, new[]{ "Id", "Name", "IsComplete" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Proto.Todo.GetTodoItemsResponse), global::Proto.Todo.GetTodoItemsResponse.Parser, new[]{ "Todos" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Proto.Todo.GetTodoItemRequest), global::Proto.Todo.GetTodoItemRequest.Parser, new[]{ "Id" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Proto.Todo.GetTodoItemResponse), global::Proto.Todo.GetTodoItemResponse.Parser, new[]{ "Todo" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Proto.Todo.GetTodoItemResponse), global::Proto.Todo.GetTodoItemResponse.Parser, new[]{ "Todo" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Proto.Todo.PostTodoItemRequest), global::Proto.Todo.PostTodoItemRequest.Parser, new[]{ "Name" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Proto.Todo.PostTodoItemResponse), global::Proto.Todo.PostTodoItemResponse.Parser, new[]{ "Todo" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Proto.Todo.PutTodoItemRequest), global::Proto.Todo.PutTodoItemRequest.Parser, new[]{ "Todo" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Proto.Todo.PutTodoItemResponse), global::Proto.Todo.PutTodoItemResponse.Parser, new[]{ "Todo" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Proto.Todo.DeleteTodoItemRequest), global::Proto.Todo.DeleteTodoItemRequest.Parser, new[]{ "Id" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Proto.Todo.DeleteTodoItemResponse), global::Proto.Todo.DeleteTodoItemResponse.Parser, new[]{ "Todo" }, null, null, null)
           }));
     }
     #endregion
@@ -711,6 +729,790 @@ namespace Proto.Todo {
               todo_ = new global::Proto.Todo.Todo();
             }
             input.ReadMessage(todo_);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class PostTodoItemRequest : pb::IMessage<PostTodoItemRequest> {
+    private static readonly pb::MessageParser<PostTodoItemRequest> _parser = new pb::MessageParser<PostTodoItemRequest>(() => new PostTodoItemRequest());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<PostTodoItemRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Proto.Todo.TodoReflection.Descriptor.MessageTypes[5]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public PostTodoItemRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public PostTodoItemRequest(PostTodoItemRequest other) : this() {
+      name_ = other.name_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public PostTodoItemRequest Clone() {
+      return new PostTodoItemRequest(this);
+    }
+
+    /// <summary>Field number for the "Name" field.</summary>
+    public const int NameFieldNumber = 2;
+    private string name_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Name {
+      get { return name_; }
+      set {
+        name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as PostTodoItemRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(PostTodoItemRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Name != other.Name) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Name.Length != 0) hash ^= Name.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Name.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Name);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Name.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(PostTodoItemRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Name.Length != 0) {
+        Name = other.Name;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 18: {
+            Name = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class PostTodoItemResponse : pb::IMessage<PostTodoItemResponse> {
+    private static readonly pb::MessageParser<PostTodoItemResponse> _parser = new pb::MessageParser<PostTodoItemResponse>(() => new PostTodoItemResponse());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<PostTodoItemResponse> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Proto.Todo.TodoReflection.Descriptor.MessageTypes[6]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public PostTodoItemResponse() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public PostTodoItemResponse(PostTodoItemResponse other) : this() {
+      todo_ = other.todo_ != null ? other.todo_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public PostTodoItemResponse Clone() {
+      return new PostTodoItemResponse(this);
+    }
+
+    /// <summary>Field number for the "todo" field.</summary>
+    public const int TodoFieldNumber = 1;
+    private global::Proto.Todo.Todo todo_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Proto.Todo.Todo Todo {
+      get { return todo_; }
+      set {
+        todo_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as PostTodoItemResponse);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(PostTodoItemResponse other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(Todo, other.Todo)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (todo_ != null) hash ^= Todo.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (todo_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Todo);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (todo_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Todo);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(PostTodoItemResponse other) {
+      if (other == null) {
+        return;
+      }
+      if (other.todo_ != null) {
+        if (todo_ == null) {
+          todo_ = new global::Proto.Todo.Todo();
+        }
+        Todo.MergeFrom(other.Todo);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            if (todo_ == null) {
+              todo_ = new global::Proto.Todo.Todo();
+            }
+            input.ReadMessage(todo_);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class PutTodoItemRequest : pb::IMessage<PutTodoItemRequest> {
+    private static readonly pb::MessageParser<PutTodoItemRequest> _parser = new pb::MessageParser<PutTodoItemRequest>(() => new PutTodoItemRequest());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<PutTodoItemRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Proto.Todo.TodoReflection.Descriptor.MessageTypes[7]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public PutTodoItemRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public PutTodoItemRequest(PutTodoItemRequest other) : this() {
+      todo_ = other.todo_ != null ? other.todo_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public PutTodoItemRequest Clone() {
+      return new PutTodoItemRequest(this);
+    }
+
+    /// <summary>Field number for the "todo" field.</summary>
+    public const int TodoFieldNumber = 1;
+    private global::Proto.Todo.Todo todo_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Proto.Todo.Todo Todo {
+      get { return todo_; }
+      set {
+        todo_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as PutTodoItemRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(PutTodoItemRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(Todo, other.Todo)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (todo_ != null) hash ^= Todo.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (todo_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Todo);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (todo_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Todo);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(PutTodoItemRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.todo_ != null) {
+        if (todo_ == null) {
+          todo_ = new global::Proto.Todo.Todo();
+        }
+        Todo.MergeFrom(other.Todo);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            if (todo_ == null) {
+              todo_ = new global::Proto.Todo.Todo();
+            }
+            input.ReadMessage(todo_);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class PutTodoItemResponse : pb::IMessage<PutTodoItemResponse> {
+    private static readonly pb::MessageParser<PutTodoItemResponse> _parser = new pb::MessageParser<PutTodoItemResponse>(() => new PutTodoItemResponse());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<PutTodoItemResponse> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Proto.Todo.TodoReflection.Descriptor.MessageTypes[8]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public PutTodoItemResponse() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public PutTodoItemResponse(PutTodoItemResponse other) : this() {
+      todo_ = other.todo_ != null ? other.todo_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public PutTodoItemResponse Clone() {
+      return new PutTodoItemResponse(this);
+    }
+
+    /// <summary>Field number for the "todo" field.</summary>
+    public const int TodoFieldNumber = 1;
+    private global::Proto.Todo.Todo todo_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Proto.Todo.Todo Todo {
+      get { return todo_; }
+      set {
+        todo_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as PutTodoItemResponse);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(PutTodoItemResponse other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(Todo, other.Todo)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (todo_ != null) hash ^= Todo.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (todo_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(Todo);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (todo_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Todo);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(PutTodoItemResponse other) {
+      if (other == null) {
+        return;
+      }
+      if (other.todo_ != null) {
+        if (todo_ == null) {
+          todo_ = new global::Proto.Todo.Todo();
+        }
+        Todo.MergeFrom(other.Todo);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            if (todo_ == null) {
+              todo_ = new global::Proto.Todo.Todo();
+            }
+            input.ReadMessage(todo_);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class DeleteTodoItemRequest : pb::IMessage<DeleteTodoItemRequest> {
+    private static readonly pb::MessageParser<DeleteTodoItemRequest> _parser = new pb::MessageParser<DeleteTodoItemRequest>(() => new DeleteTodoItemRequest());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<DeleteTodoItemRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Proto.Todo.TodoReflection.Descriptor.MessageTypes[9]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DeleteTodoItemRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DeleteTodoItemRequest(DeleteTodoItemRequest other) : this() {
+      id_ = other.id_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DeleteTodoItemRequest Clone() {
+      return new DeleteTodoItemRequest(this);
+    }
+
+    /// <summary>Field number for the "Id" field.</summary>
+    public const int IdFieldNumber = 1;
+    private string id_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Id {
+      get { return id_; }
+      set {
+        id_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as DeleteTodoItemRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(DeleteTodoItemRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Id != other.Id) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Id.Length != 0) hash ^= Id.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Id.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Id);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Id.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Id);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(DeleteTodoItemRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Id.Length != 0) {
+        Id = other.Id;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            Id = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  public sealed partial class DeleteTodoItemResponse : pb::IMessage<DeleteTodoItemResponse> {
+    private static readonly pb::MessageParser<DeleteTodoItemResponse> _parser = new pb::MessageParser<DeleteTodoItemResponse>(() => new DeleteTodoItemResponse());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<DeleteTodoItemResponse> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Proto.Todo.TodoReflection.Descriptor.MessageTypes[10]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DeleteTodoItemResponse() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DeleteTodoItemResponse(DeleteTodoItemResponse other) : this() {
+      todo_ = other.todo_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public DeleteTodoItemResponse Clone() {
+      return new DeleteTodoItemResponse(this);
+    }
+
+    /// <summary>Field number for the "todo" field.</summary>
+    public const int TodoFieldNumber = 1;
+    private static readonly pb::FieldCodec<global::Proto.Todo.Todo> _repeated_todo_codec
+        = pb::FieldCodec.ForMessage(10, global::Proto.Todo.Todo.Parser);
+    private readonly pbc::RepeatedField<global::Proto.Todo.Todo> todo_ = new pbc::RepeatedField<global::Proto.Todo.Todo>();
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public pbc::RepeatedField<global::Proto.Todo.Todo> Todo {
+      get { return todo_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as DeleteTodoItemResponse);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(DeleteTodoItemResponse other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!todo_.Equals(other.todo_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= todo_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+      todo_.WriteTo(output, _repeated_todo_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      size += todo_.CalculateSize(_repeated_todo_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(DeleteTodoItemResponse other) {
+      if (other == null) {
+        return;
+      }
+      todo_.Add(other.todo_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            todo_.AddEntriesFrom(input, _repeated_todo_codec);
             break;
           }
         }

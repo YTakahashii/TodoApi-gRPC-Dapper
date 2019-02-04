@@ -7,8 +7,15 @@ services:
       SA_PASSWORD: Password0123
     ports:
       - "1433:1433"
+  grpc:
+    container_name: grpc-todo-server
+    build: ./TodoApi-gRPC-Dapper
+    stdin_open: true
+    tty: true
+    ports:
+      - "5000:5000"
   proxy:
-    container_name: grpc-proxy
+    container_name: grpc-todo-server-proxy
     build: ./Envoy
     ports:
       - "8080:8080"

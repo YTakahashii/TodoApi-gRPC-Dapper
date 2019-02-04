@@ -11,7 +11,7 @@ namespace TodoApi_gRPC_Dapper.Models.SqlHandler
 
         public SqlConnection GetConnection()
         {
-            var connectionString = "Data Source=127.0.0.1;Initial Catalog=todoapi_grpc_dapper;Connect Timeout=60;Persist Security Info=True;User ID=sa;Password=Password0123";
+            var connectionString = "Data Source=db;Initial Catalog=todoapi_grpc_dapper;Connect Timeout=60;Persist Security Info=True;User ID=sa;Password=Password0123";
             var connection = new SqlConnection(connectionString);
             return connection;
         }

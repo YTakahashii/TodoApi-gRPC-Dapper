@@ -99,6 +99,18 @@ namespace TodoApi_gRPC_Dapper.Tests.Implements
             Assert.Contains(actual.Todo, expectedTodoItems);
         }
 
+        [Fact(DisplayName = "PutTodoItem()が正しく動作する")]
+        public async Task OkPutTodoItemTest()
+        {
+            var updateTodoItem = expectedTodoItems[0];
+            var todo = new Todo { Id = updateTodoItem.Id, Name = "OkPutPostTodoItemTest", IsComplete = true };
+            var request = new PutTodoItemRequest { Todo = todo };
+            var fakeServerCallContext = TestServerCallContext.Create("fooMethod", null, DateTime.UtcNow.AddHours(1), new Metadata(), CancellationToken.None, "127.0.0.1", null, null, (metadata) => TaskUtils.CompletedTask, () => new WriteOptions(), (writeOptions) => { });
+            var actual = await implement.PutTodoItem(request, fakeServerCallContext);
+
+            Assert.Equal(expectedTodoItems[0], actual.Todo);
+        }
+
         [Fact(DisplayName = "DeleteTodoItem()が正しく動作する")]
         public async Task OkDeleteTodoItemTest()
         {

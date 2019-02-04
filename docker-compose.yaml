@@ -7,3 +7,8 @@ services:
       SA_PASSWORD: Password0123
     ports:
       - "1433:1433"
+  proxy:
+    container_name: grpc-proxy
+    build: ./Envoy
+    ports:
+      - "8080:8080"

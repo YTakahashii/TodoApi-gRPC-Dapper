@@ -36,8 +36,9 @@ namespace TodoApi_gRPC_Dapper.Implements {
         }
 
         public override async Task<PostTodoItemResponse> PostTodoItem (PostTodoItemRequest request, ServerCallContext context) {
-            var addedTodoItem = await _unitOfWork.TodoItems.Add (new Todo { Name = request.Name });
-            var response = new PostTodoItemResponse { Todo = addedTodoItem };
+            var newTodo = new Todo { Id = Guid.NewGuid().ToString(), Name = request.Name, IsComplete = false };
+            await _unitOfWork.TodoItems.Add(newTodo);
+            var response = new PostTodoItemResponse { Todo = newTodo };
 
             return response;
         }

@@ -41,7 +41,7 @@ namespace TodoApi_gRPC_Dapper.Models.Repository {
             }
         }
 
-        public async Task<Todo> Add (Todo entity) {
+        public async Task Add (Todo entity) {
             using (IDbConnection db = Connection) {
                 db.Open ();
                 using (var tran = db.BeginTransaction ()) {
@@ -52,7 +52,6 @@ namespace TodoApi_gRPC_Dapper.Models.Repository {
                         String sql = $@"INSERT INTO {tableName} (Id ,Name, IsComplete) VALUES (@Id, @Name, @IsComplete)";
                         await db.ExecuteAsync (sql, entity, tran);
                         tran.Commit ();
-                        return entity;
                     } catch {
                         tran.Rollback ();
                         throw new Exception ("Error: Rollback");

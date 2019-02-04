@@ -44,11 +44,12 @@ namespace TodoApi_gRPC_Dapper.Tests.Implements
             todoItemRepoMoq.Setup(x => x.FindAsync(It.IsAny<String>()))
                 .ReturnsAsync((String id) => expectedTodoItems.Find(x => x.Id == id));
             // ダミーメソッドの中身を書き換える場合はCallbackでoverrideする
-            todoItemRepoMoq.SetupAsync(x => x.Add(It.IsAny<Todo>())).Returns((Todo todo) =>
-            {
-                expectedTodoItems.Add(todo);
-                return todo;
-            });
+            todoItemRepoMoq.SetupAsync(x => x.Add(It.IsAny<Todo>()))
+                .Callback<Todo>(item =>
+                {
+                    expectedTodoItems.Add(item); // #region Implementから受け取った値を登録するだけ
+                });
+            // todoItemRepoMoq.SetupAsync(x => x.Add(It.IsAny<Todo>())).Returns(lastCreatedTodoItem);
             todoItemRepoMoq.SetupAsync(x => x.Update(It.IsAny<Todo>()))
                 .Callback<Todo>(item =>
                 {
@@ -81,6 +82,33 @@ namespace TodoApi_gRPC_Dapper.Tests.Implements
             var actual = await implement.GetTodoItem(request, fakeServerCallContext);
 
             Assert.Equal(expectedTodoItem, actual.Todo);
+        }
+
+        [Fact(DisplayName = "PostTodoItem()が正しく動作する")]
+        public async Task OkPostTodoItemTest()
+        {
+            var request = new PostTodoItemRequest { Name = "PostTodoTestName" };
+            var fakeServerCallContext = TestServerCallContext.Create("fooMethod", null, DateTime.UtcNow.AddHours(1), new Metadata(), CancellationToken.None, "127.0.0.1", null, null, (metadata) => TaskUtils.CompletedTask, () => new WriteOptions(), (writeOptions) => { });
+            var actual = await implement.PostTodoItem(request, fakeServerCallContext);
+
+            // リクエストで受け取ったNameが設定されている
+            Assert.Equal(request.Name, actual.Todo.Name);
+            // IsCompleteの初期値はfalseである
+            Assert.Equal(false, actual.Todo.IsComplete);
+            // 生成されたTodoがDBに登録されている
+            Assert.Contains(actual.Todo, expectedTodoItems);
+        }
+
+        [Fact(DisplayName = "DeleteTodoItem()が正しく動作する")]
+        public async Task OkDeleteTodoItemTest()
+        {
+            var expectedTodoItem = expectedTodoItems[0];
+            var request = new DeleteTodoItemRequest { Id = expectedTodoItem.Id };
+            var fakeServerCallContext = TestServerCallContext.Create("fooMethod", null, DateTime.UtcNow.AddHours(1), new Metadata(), CancellationToken.None, "127.0.0.1", null, null, (metadata) => TaskUtils.CompletedTask, () => new WriteOptions(), (writeOptions) => { });
+            var actual = await implement.DeleteTodoItem(request, fakeServerCallContext);
+
+            Assert.Equal(2, expectedTodoItems.Count);
+            Assert.DoesNotContain<Todo>(actual.Todo, expectedTodoItems);
         }
     }
 }

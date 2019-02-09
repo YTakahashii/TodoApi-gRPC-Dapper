@@ -29,7 +29,7 @@ namespace Proto.Todo {
             "FEdldFRvZG9JdGVtc1Jlc3BvbnNlEh8KBXRvZG9zGAEgAygLMhAuUHJvdG8u",
             "VG9kby5Ub2RvIiAKEkdldFRvZG9JdGVtUmVxdWVzdBIKCgJJZBgBIAEoCSI1",
             "ChNHZXRUb2RvSXRlbVJlc3BvbnNlEh4KBHRvZG8YASABKAsyEC5Qcm90by5U",
-            "b2RvLlRvZG8iIwoTUG9zdFRvZG9JdGVtUmVxdWVzdBIMCgROYW1lGAIgASgJ",
+            "b2RvLlRvZG8iIwoTUG9zdFRvZG9JdGVtUmVxdWVzdBIMCgROYW1lGAEgASgJ",
             "IjYKFFBvc3RUb2RvSXRlbVJlc3BvbnNlEh4KBHRvZG8YASABKAsyEC5Qcm90",
             "by5Ub2RvLlRvZG8iNAoSUHV0VG9kb0l0ZW1SZXF1ZXN0Eh4KBHRvZG8YASAB",
             "KAsyEC5Qcm90by5Ub2RvLlRvZG8iNQoTUHV0VG9kb0l0ZW1SZXNwb25zZRIe",
@@ -772,7 +772,7 @@ namespace Proto.Todo {
     }
 
     /// <summary>Field number for the "Name" field.</summary>
-    public const int NameFieldNumber = 2;
+    public const int NameFieldNumber = 1;
     private string name_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Name {
@@ -817,7 +817,7 @@ namespace Proto.Todo {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
       if (Name.Length != 0) {
-        output.WriteRawTag(18);
+        output.WriteRawTag(10);
         output.WriteString(Name);
       }
       if (_unknownFields != null) {
@@ -856,7 +856,7 @@ namespace Proto.Todo {
           default:
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
-          case 18: {
+          case 10: {
             Name = input.ReadString();
             break;
           }

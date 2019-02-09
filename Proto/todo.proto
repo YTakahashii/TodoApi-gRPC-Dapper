@@ -31,7 +31,7 @@ message GetTodoItemResponse {
 }
 
 message PostTodoItemRequest {
-    string Name = 2;
+    string Name = 1;
 }
 
 message PostTodoItemResponse {

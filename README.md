@@ -9,7 +9,7 @@ ASP.NET CoreとgRPCとDapperを使って実装したTodoAPIです。
 - `CreateDatabase.sql` を実行
 - `CreateTable.sql` を実行
 
-### Feature
+### Future
 この部分も自動化したい
 
 ## 起動

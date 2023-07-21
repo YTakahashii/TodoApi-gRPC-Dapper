@@ -13,7 +13,7 @@
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.0" />
     <PackageReference Include="Moq" Version="4.10.1" />
     <PackageReference Include="Talentsoft.Moq.SetupAsync" Version="1.0.0" />
-    <PackageReference Include="System.Data.SqlClient" Version="4.6.0" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
     <PackageReference Include="Grpc" Version="1.18.0" />
     <PackageReference Include="Grpc.Core" Version="1.18.0" />
     <PackageReference Include="Grpc.Core.Testing" Version="1.18.0" />
